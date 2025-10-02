@@ -12,7 +12,6 @@ end
 Base.@kwdef struct Ligne
     id::Int
     nom::String
-    distance_km::Float64
 end
 
 Base.@kwdef struct Bus
