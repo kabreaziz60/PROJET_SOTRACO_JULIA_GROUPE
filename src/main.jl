@@ -10,9 +10,9 @@ include(joinpath(@__DIR__, "optimisation.jl"));  using .Optimisation
 export lancer_systeme_sotraco
 
 function lancer_systeme_sotraco()
-    println("========================================")
+    println("==========================================")
     println("   SOTRACO - Système d'Optimisation")
-    println("========================================")
+    println("==========================================")
     println("1. Charger données")
     println("2. Calculer distance + temps (exemple)")
     println("3. Optimiser fréquence pour une ligne")
