@@ -16,6 +16,7 @@ function lancer_systeme_sotraco()
     println("1. Charger données")
     println("2. Calculer distance + temps (exemple)")
     println("3. Optimiser fréquence pour une ligne")
+    println("4. Générer les graphiques (Washylatou)")
     println("0. Quitter")
     print("Choix: ")
 
@@ -57,6 +58,21 @@ function lancer_systeme_sotraco()
         show(dmd, allrows=true, allcols=true); println()
         println("\nPlan recommandé:")
         show(plan, allrows=true, allcols=true); println()
+
+    elseif choix == 4
+        # 🔷 Lance le script d'analytics (Washylatou): scripts/plots.jl
+        plots_path = normpath(joinpath(@__DIR__, "..", "scripts", "plots.jl"))
+        if !isfile(plots_path)
+            println("⚠️  Fichier introuvable: $(plots_path). Vérifie que `scripts/plots.jl` existe.")
+            return
+        end
+        try
+            println("🟦 Génération des graphiques et exports CSV…")
+            include(plots_path)
+            println("✅ Graphiques générés (voir le dossier `resultats/`).")
+        catch err
+            println("❌ Erreur lors de l'exécution de `plots.jl` : ", err)
+        end
 
     elseif choix == 0
         println("Bye")
