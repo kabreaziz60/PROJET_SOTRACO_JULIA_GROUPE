@@ -1,0 +1,36 @@
+===== RAPPORT ANALYTIQUE SOTRACO =====
+
+>> Statistiques par ligne :
+15×5 DataFrame
+ Row │ ligne_id  moyenne  mediane  max    min
+     │ Int64     Float64  Float64  Int64  Int64
+─────┼──────────────────────────────────────────
+   1 │        1  18.7296     17.0     68      0
+   2 │        2  15.0571     12.0     60      0
+   3 │        3  16.0308     14.5     61      0
+   4 │        4  13.1211     10.0     50      0
+   5 │        5  15.6828     12.0     60      0
+   6 │        6  16.8429     15.5     58      0
+   7 │        7  13.86       11.0     50      0
+   8 │        8  16.1714     13.0     60      0
+   9 │        9  17.7909     13.5     68      0
+  10 │       10  13.1158     10.0     50      0
+  11 │       11  13.2667     10.0     50      0
+  12 │       12  12.8455      9.0     50      0
+  13 │       13  13.68       10.0     50      0
+  14 │       14  14.6667     12.0     50      0
+  15 │       15  13.1037     10.0     50      0
+
+>> Heures de pointe :
+3×2 DataFrame
+ Row │ heure  passagers
+     │ Int64  Int64
+─────┼──────────────────
+   1 │     7       3711
+   2 │    17       3644
+   3 │     6       3095
+
+>> Observations :
+- Les heures 7h-9h et 17h-19h montrent une surcharge.
+- Certaines lignes dépassent 80% de taux moyen.
+- Recommandation : renforcer les bus aux heures de pointe.
