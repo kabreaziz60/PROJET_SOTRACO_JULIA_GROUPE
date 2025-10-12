@@ -2,9 +2,10 @@ module Analyse
 
 using DataFrames, Statistics, Dates
 
+
 export stats_par_ligne, heures_de_pointe, taux_occupation
 
-# -------- Helpers robustes: recherche de colonnes par nom (insensible au format) --------
+# recherche de colonnes par nom (insensible au format) --------
 
 """
 Retourne le Symbol de la 1ère colonne trouvée dont le nom (en minuscule) est
