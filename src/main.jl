@@ -46,9 +46,9 @@ function lancer_systeme_sotraco()
     println("1. Charger données")
     println("2. Calculer distance + temps (exemple)")
     println("3. Optimiser fréquence pour une ligne")
-    println("4. Générer les graphiques (Washylatou)")
+    println("4. Générer les graphiques")
     if HAS_ANALYSE && HAS_VISU && HAS_RAPPORTS
-        println("5. Analyses et rapport (Washylatou)")
+        println("5. Analyses et recommandations")
     end
     println("0. Quitter")
     print("Choix: ")
