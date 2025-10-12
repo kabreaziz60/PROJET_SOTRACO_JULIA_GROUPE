@@ -27,9 +27,9 @@ COMPAORE Washylatou – Analyse des données, visualisations et recommandations
 
 Rapport final : docs/rapport_final.pdf
 
-Lien vidéo (Aziz – Backend) : 
+Lien vidéo KABRE Abdoul AZIZ : https://drive.google.com/file/d/11lYVivLuwOj0rlcA0xOvYcR93ZGuK-UL/view?usp=sharing
 
-Lien vidéo (Washylatou – Analytics) : 
+Lien vidéo COMPAORE Washylatou : https://drive.google.com/file/d/1KDZzJ1IXbbyZcHv2-qX25UMggysEecf1/view?usp=sharing
 
 
 🧩 Structure du projet
