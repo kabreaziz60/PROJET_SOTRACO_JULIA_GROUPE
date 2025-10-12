@@ -37,7 +37,7 @@ include(joinpath(@__DIR__, "..", "src", "main.jl"));          using .MainApp
     # Calcul du plan
     plan = Optimisation.plan_frequence(dmd)
 
-    # ✅ Correction : on convertit les noms en Symbol pour le test
+    # ✅ convertit les noms en Symbol pour le test
     required = [:heure, :passagers, :freq_recommandee, :interv_min, :capacite_theorique]
     cols_sym = Symbol.(names(plan))
     @test all(n -> n in cols_sym, required)
