@@ -44,4 +44,34 @@ plot(plan.heure, plan.passagers, lw=2, marker=:circle, label="Demande",
 plot!(plan.heure, plan.capacite_theorique, lw=2, marker=:square, label="Capacité théorique")
 savefig(joinpath(OUT, "demande_vs_capacite.png"))
 
+
+# === Taux de charge (demande / capacité) + résumé ===
+# On calcule TOUJOURS taux_charge pour éviter UndefVarError
+taux_charge = if (:passagers in names(plan)) && (:capacite_theorique in names(plan))
+    round.(plan.passagers ./ max.(plan.capacite_theorique, 1e-9), digits=2)
+else
+    fill(missing, nrow(plan))
+end
+
+# Graphe (seulement si on a des valeurs numériques)
+if any(!ismissing, taux_charge)
+    plt_tc = plot(plan.heure, taux_charge, lw=2, marker=:circle, legend=false,
+                  xlabel="Heure", ylabel="Taux de charge",
+                  title="Taux de charge (demande / capacité)")
+    ylims!(plt_tc, (0, 1.2))
+    savefig(joinpath(OUT, "taux_de_charge.png"))
+end
+
+# === Création du résumé CSV propre ===
+resume = DataFrame(
+    heure = plan.heure,
+    passagers = hasproperty(plan, :passagers) ? plan.passagers : fill(missing, nrow(plan)),
+    capacite_theorique = hasproperty(plan, :capacite_theorique) ? plan.capacite_theorique : fill(missing, nrow(plan)),
+    taux_charge = taux_charge
+)
+
+CSV.write(joinpath(OUT, "resume_taux_de_charge.csv"), resume)
+
+
+
 println("\n✅ Graphiques + CSV exportés dans: $OUT")
