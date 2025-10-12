@@ -1,5 +1,5 @@
 # =========================================================
-# test/runtests.jl — Tests unitaires pour le projet SOTRACO
+# Tests unitaires pour le projet SOTRACO
 # =========================================================
 
 using Pkg
